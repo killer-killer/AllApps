@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Apps</title>
+	<style type="text/css">
+	.app{
+		display: inline-block;
+		margin: 20px;
+	}
+	.app-name{
+		display: block;
+		background: #246ccb;
+		color:white;
+		height: 40px;
+		width:225px;
+	}
+	</style>
+</head>
+<body>
+<!-- <script src="jquery-1.9.1.js"></script>-->
+<script type="text/javascript">
+	var listOfApps={
+						"app1":{
+							name:"OSIwizz",
+							src:"test.jpg",
+							link:"https://osiwizz.osius.com"
+						},
+						"app2":{
+							name:"Odoo",
+							src:"test.jpg",
+							link:"http://osi-odoo.westus.cloudapp.azure.com/web/login"
+						},
+						"app3":{
+							name:"impact",
+							src:"test.jpg",
+							link:"http://impact.osius.com"
+						},
+						"app4":{
+							name:"ERTS",
+							src:"test.jpg",
+							link:"https://erts.osius.com"
+						},
+						"app5":{
+							name:"SkillSet",
+							src:"test.jpg",
+							link:"#"
+						}
+					};
+	for(app in listOfApps){
+		//Fragment="<div class='app'><img src="+listOfApps[app].src+"></img><a href="+listOfApps[app].link+"><button class='appname'>"+listOfApps[app].name+"</button></a></div>";
+		//$("body").append(Fragment);
+
+		var ap=document.createElement("div");
+		ap.className="app";
+		var logo=document.createElement("img");
+		logo.setAttribute("src",listOfApps[app].src);
+		var link=document.createElement("a");
+		link.href=listOfApps[app].link;
+		var btn=document.createElement("button");
+		btn.className="app-name";
+		btn.innerHTML=listOfApps[app].name;
+
+		link.appendChild(btn);
+		ap.appendChild(logo);
+		ap.appendChild(link);
+		
+		document.body.append(ap);		
+	}
+</script>
+</body>
+</html>
